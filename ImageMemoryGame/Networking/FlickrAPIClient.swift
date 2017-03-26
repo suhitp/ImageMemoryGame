@@ -8,6 +8,6 @@
 
 import UIKit
 
-class FlickrAPIClient: ONSObject {
+struct FlickrAPIClient {
 
 }

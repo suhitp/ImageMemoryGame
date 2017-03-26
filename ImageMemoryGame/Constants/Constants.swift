@@ -10,4 +10,6 @@ import Foundation
 
 struct Constants {
 
+    static let cellReuseIdentifier = "ImageCell"
+    static let ImageCellNibName = "ImageCell"
 }

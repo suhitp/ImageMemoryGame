@@ -8,6 +8,6 @@
 
 import UIKit
 
-class MemoryGameViewModel: NSObject {
+struct MemoryGameViewModel {
 
 }
