@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B946B34C1E879254009F9520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B34B1E879254009F9520 /* AppDelegate.swift */; };
-		B946B34E1E879254009F9520 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B34D1E879254009F9520 /* ViewController.swift */; };
 		B946B3511E879254009F9520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B946B34F1E879254009F9520 /* Main.storyboard */; };
 		B946B3531E879254009F9520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946B3521E879254009F9520 /* Assets.xcassets */; };
 		B946B3561E879254009F9520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B946B3541E879254009F9520 /* LaunchScreen.storyboard */; };
 		B946B3611E879254009F9520 /* ImageMemoryGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3601E879254009F9520 /* ImageMemoryGameTests.swift */; };
 		B946B36C1E879254009F9520 /* ImageMemoryGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B36B1E879254009F9520 /* ImageMemoryGameUITests.swift */; };
+		B946B37A1E87E175009F9520 /* MemoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3791E87E175009F9520 /* MemoryGameViewController.swift */; };
+		B946B37C1E87E1AF009F9520 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B37B1E87E1AF009F9520 /* ImageCell.swift */; };
+		B946B37E1E87E1DB009F9520 /* FlickrAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B37D1E87E1DB009F9520 /* FlickrAPIClient.swift */; };
+		B946B3801E87E1F9009F9520 /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B37F1E87E1F9009F9520 /* MemoryGameViewModel.swift */; };
+		B946B3871E87E232009F9520 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3861E87E232009F9520 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		B946B3481E879254009F9520 /* ImageMemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageMemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B34B1E879254009F9520 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B946B34D1E879254009F9520 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B946B3501E879254009F9520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B946B3521E879254009F9520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B946B3551E879254009F9520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		B946B3671E879254009F9520 /* ImageMemoryGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageMemoryGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B36B1E879254009F9520 /* ImageMemoryGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryGameUITests.swift; sourceTree = "<group>"; };
 		B946B36D1E879254009F9520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B946B3791E87E175009F9520 /* MemoryGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryGameViewController.swift; path = Controller/MemoryGameViewController.swift; sourceTree = "<group>"; };
+		B946B37B1E87E1AF009F9520 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = View/ImageCell.swift; sourceTree = "<group>"; };
+		B946B37D1E87E1DB009F9520 /* FlickrAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrAPIClient.swift; path = Networking/FlickrAPIClient.swift; sourceTree = "<group>"; };
+		B946B37F1E87E1F9009F9520 /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryGameViewModel.swift; path = ViewModel/MemoryGameViewModel.swift; sourceTree = "<group>"; };
+		B946B3861E87E232009F9520 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				B946B34B1E879254009F9520 /* AppDelegate.swift */,
-				B946B34D1E879254009F9520 /* ViewController.swift */,
 				B946B34F1E879254009F9520 /* Main.storyboard */,
+				B946B3821E87E205009F9520 /* View */,
+				B946B3831E87E20A009F9520 /* ViewModel */,
+				B946B3811E87E1FD009F9520 /* Controller */,
+				B946B3851E87E217009F9520 /* Constants */,
+				B946B3841E87E211009F9520 /* Networking */,
 				B946B3521E879254009F9520 /* Assets.xcassets */,
 				B946B3541E879254009F9520 /* LaunchScreen.storyboard */,
 				B946B3571E879254009F9520 /* Info.plist */,
@@ -123,6 +135,46 @@
 				B946B36D1E879254009F9520 /* Info.plist */,
 			);
 			path = ImageMemoryGameUITests;
+			sourceTree = "<group>";
+		};
+		B946B3811E87E1FD009F9520 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B946B3791E87E175009F9520 /* MemoryGameViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B946B3821E87E205009F9520 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B946B37B1E87E1AF009F9520 /* ImageCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B946B3831E87E20A009F9520 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B946B37F1E87E1F9009F9520 /* MemoryGameViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		B946B3841E87E211009F9520 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B946B37D1E87E1DB009F9520 /* FlickrAPIClient.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		B946B3851E87E217009F9520 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B946B3861E87E232009F9520 /* Constants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B946B34E1E879254009F9520 /* ViewController.swift in Sources */,
+				B946B37E1E87E1DB009F9520 /* FlickrAPIClient.swift in Sources */,
 				B946B34C1E879254009F9520 /* AppDelegate.swift in Sources */,
+				B946B3801E87E1F9009F9520 /* MemoryGameViewModel.swift in Sources */,
+				B946B37A1E87E175009F9520 /* MemoryGameViewController.swift in Sources */,
+				B946B37C1E87E1AF009F9520 /* ImageCell.swift in Sources */,
+				B946B3871E87E232009F9520 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ImageMemoryGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suhit.ImageMemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ImageMemoryGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suhit.ImageMemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
