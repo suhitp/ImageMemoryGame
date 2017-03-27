@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemoryGameViewController: UIViewController, MemorygameDataProvider {
 
@@ -21,12 +22,13 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         super.viewDidLoad()
 
         self.title = "Memory Game"
+        memoryGuessImageView.backgroundColor = UIColor.red
         
         //Configure CollectionView
         configureCollectionView()
         
         viewModel = MemoryGameViewModel()
-        memoryGuessImageView.backgroundColor = UIColor.red
+        viewModel.delegate = self
         viewModel.loadImages()
     }
 
@@ -38,8 +40,6 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: height, height: height)
-        
-        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: Constants.cellReuseIdentifier)
     }
     
     //MARK: MemorygameDataProvider
@@ -49,7 +49,10 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         }
         
         self.images = images
-        collectionView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     func didReceiveError(with message: String) {
@@ -67,9 +70,10 @@ extension MemoryGameViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuseIdentifier, for: indexPath)
-        imageCell.backgroundColor = UIColor.blue
-        return imageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! ImageCell
+        let image = images[indexPath.row]
+        cell.posterImageView.kf.setImage(with: image.imageUrl, placeholder: nil, options: [.transition(ImageTransition.fade(0.5))], progressBlock: nil, completionHandler: nil)
+        return cell
     }
 }
 

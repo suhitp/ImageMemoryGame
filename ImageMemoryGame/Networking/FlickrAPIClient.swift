@@ -12,9 +12,8 @@ struct FlickrAPIClient {
 
     public static func getImages(completion: @escaping ([Image]?, Error?) -> Void)  {
         
-        let baseUrl = "https://api.flickr.com/services/feeds/photos_public.gne"
-        let url = baseUrl.appending("?format=json&nojsoncallback=1")
-        guard let requestUrl = URL(string: url) else {
+        let baseUrl = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1"
+        guard let requestUrl = URL(string: baseUrl) else {
             return
         }
         

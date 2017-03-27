@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +29,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hnK-jj-xyl">
                                 <rect key="frame" x="0.0" y="230" width="375" height="437"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="LqA-z2-1Lw">
                                     <size key="itemSize" width="91" height="89"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,20 +44,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdE-zB-FQ8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXV-Av-j7f">
                                                     <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="OdE-zB-FQ8" firstAttribute="top" secondItem="KoC-Rk-n8J" secondAttribute="top" id="SYn-mb-mTZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="OdE-zB-FQ8" secondAttribute="bottom" id="WBC-XH-Se3"/>
-                                            <constraint firstAttribute="trailing" secondItem="OdE-zB-FQ8" secondAttribute="trailing" id="ZAe-0b-PZK"/>
-                                            <constraint firstItem="OdE-zB-FQ8" firstAttribute="leading" secondItem="KoC-Rk-n8J" secondAttribute="leading" id="feH-ha-oCS"/>
+                                            <constraint firstAttribute="trailing" secondItem="eXV-Av-j7f" secondAttribute="trailing" id="3E0-QC-nLc"/>
+                                            <constraint firstAttribute="bottom" secondItem="eXV-Av-j7f" secondAttribute="bottom" id="Nuh-8G-yIu"/>
+                                            <constraint firstItem="eXV-Av-j7f" firstAttribute="leading" secondItem="KoC-Rk-n8J" secondAttribute="leading" id="gl4-v7-juS"/>
+                                            <constraint firstItem="eXV-Av-j7f" firstAttribute="top" secondItem="KoC-Rk-n8J" secondAttribute="top" id="vo0-tx-9vB"/>
                                         </constraints>
                                         <size key="customSize" width="91" height="91"/>
                                         <connections>
-                                            <outlet property="imageView" destination="OdE-zB-FQ8" id="EgG-1z-BHm"/>
+                                            <outlet property="posterImageView" destination="eXV-Av-j7f" id="gyd-tn-ZAC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
