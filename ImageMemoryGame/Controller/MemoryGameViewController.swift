@@ -99,7 +99,6 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         counterLabel.text = "\(counter)"
         if counter == 15 {
             let randomNumber = arc4random_uniform(9)
-            print(randomNumber)
             let image = images[Int(randomNumber)]
             memoryGuessImageView.isHidden = false
             memoryGuessImageView.kf.setImage(with: image.imageUrl)
