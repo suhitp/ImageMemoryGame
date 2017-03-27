@@ -10,6 +10,7 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
     
+    @IBOutlet weak var background: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     
 }

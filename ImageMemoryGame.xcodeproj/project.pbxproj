@@ -23,6 +23,7 @@
 		B946B38A1E87F7A1009F9520 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3891E87F7A1009F9520 /* Image.swift */; };
 		B946B38D1E8803C8009F9520 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B38C1E8803C8009F9520 /* JSONDecodable.swift */; };
 		B9EA1E151E88D897000DEE92 /* MemoryGameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */; };
+		B9EA1E1A1E890A6C000DEE92 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EA1E191E890A6C000DEE92 /* UIView+Extension.swift */; };
 		F3A6C93A665DC0FD427DCBD1 /* Pods_ImageMemoryGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30504BBD5044ADA4674CB271 /* Pods_ImageMemoryGameTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		B946B3891E87F7A1009F9520 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
 		B946B38C1E8803C8009F9520 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONDecodable.swift; path = Protocol/JSONDecodable.swift; sourceTree = "<group>"; };
 		B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryGameDataProvider.swift; path = Protocol/MemoryGameDataProvider.swift; sourceTree = "<group>"; };
+		B9EA1E191E890A6C000DEE92 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "Extension/UIView+Extension.swift"; sourceTree = "<group>"; };
 		D34F1E34D666BBC57BB46935 /* Pods-ImageMemoryGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageMemoryGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageMemoryGame/Pods-ImageMemoryGame.release.xcconfig"; sourceTree = "<group>"; };
 		DDFCFA06498114A56CF44A16 /* Pods-ImageMemoryGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageMemoryGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageMemoryGameTests/Pods-ImageMemoryGameTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 		B946B34A1E879254009F9520 /* ImageMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				B9EA1E181E890A48000DEE92 /* Extension */,
 				B946B38B1E880392009F9520 /* Protocol */,
 				B946B3881E87F785009F9520 /* Model */,
 				B946B34B1E879254009F9520 /* AppDelegate.swift */,
@@ -227,6 +230,14 @@
 				B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		B9EA1E181E890A48000DEE92 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B9EA1E191E890A6C000DEE92 /* UIView+Extension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		E0F7F13F54668B5520724D16 /* Pods */ = {
@@ -531,6 +542,7 @@
 				B946B3801E87E1F9009F9520 /* MemoryGameViewModel.swift in Sources */,
 				B946B37A1E87E175009F9520 /* MemoryGameViewController.swift in Sources */,
 				B946B37C1E87E1AF009F9520 /* ImageCell.swift in Sources */,
+				B9EA1E1A1E890A6C000DEE92 /* UIView+Extension.swift in Sources */,
 				B946B3871E87E232009F9520 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

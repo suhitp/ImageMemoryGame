@@ -44,6 +44,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xy-w8d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXV-Av-j7f">
                                                     <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
                                                 </imageView>
@@ -52,11 +56,16 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="eXV-Av-j7f" secondAttribute="trailing" id="3E0-QC-nLc"/>
                                             <constraint firstAttribute="bottom" secondItem="eXV-Av-j7f" secondAttribute="bottom" id="Nuh-8G-yIu"/>
+                                            <constraint firstItem="rBa-Xy-w8d" firstAttribute="leading" secondItem="KoC-Rk-n8J" secondAttribute="leading" id="cRk-ef-8xp"/>
                                             <constraint firstItem="eXV-Av-j7f" firstAttribute="leading" secondItem="KoC-Rk-n8J" secondAttribute="leading" id="gl4-v7-juS"/>
+                                            <constraint firstItem="rBa-Xy-w8d" firstAttribute="top" secondItem="KoC-Rk-n8J" secondAttribute="top" id="k64-xt-Uwe"/>
+                                            <constraint firstAttribute="bottom" secondItem="rBa-Xy-w8d" secondAttribute="bottom" id="oVr-rn-4z3"/>
+                                            <constraint firstAttribute="trailing" secondItem="rBa-Xy-w8d" secondAttribute="trailing" id="tSt-xG-TxZ"/>
                                             <constraint firstItem="eXV-Av-j7f" firstAttribute="top" secondItem="KoC-Rk-n8J" secondAttribute="top" id="vo0-tx-9vB"/>
                                         </constraints>
                                         <size key="customSize" width="91" height="91"/>
                                         <connections>
+                                            <outlet property="background" destination="rBa-Xy-w8d" id="vLW-u1-wg3"/>
                                             <outlet property="posterImageView" destination="eXV-Av-j7f" id="gyd-tn-ZAC"/>
                                         </connections>
                                     </collectionViewCell>
@@ -66,20 +75,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Yd1-3m-Mcf"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="21" text="Tap to guess the correct image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-Yn-SAc">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="21" text="Tap to guess the correct image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-Yn-SAc">
                                 <rect key="frame" x="16" y="201" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hA-UY-6bs">
+                                <rect key="frame" x="137" y="80" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6ju-2l-cmG"/>
+                                    <constraint firstAttribute="height" constant="100" id="8zd-R1-jNJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ktg-Yn-SAc" firstAttribute="top" secondItem="4hA-UY-6bs" secondAttribute="bottom" constant="21" id="76O-6B-obT"/>
+                            <constraint firstItem="4hA-UY-6bs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9VE-0g-SHU"/>
                             <constraint firstAttribute="trailing" secondItem="Ktg-Yn-SAc" secondAttribute="trailing" constant="16" id="Dwx-v6-ZFq"/>
                             <constraint firstItem="hnK-jj-xyl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ghe-EV-9oc"/>
                             <constraint firstAttribute="trailing" secondItem="hnK-jj-xyl" secondAttribute="trailing" id="P5A-Xf-yml"/>
                             <constraint firstItem="hnK-jj-xyl" firstAttribute="top" secondItem="Ktg-Yn-SAc" secondAttribute="bottom" constant="8" id="a7b-MR-sox"/>
                             <constraint firstItem="Ktg-Yn-SAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="d85-Kf-0Lb"/>
+                            <constraint firstItem="4hA-UY-6bs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="gZT-dd-qzJ"/>
                             <constraint firstItem="woU-hV-IHI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iyw-jx-V2T"/>
                             <constraint firstItem="Ktg-Yn-SAc" firstAttribute="top" secondItem="woU-hV-IHI" secondAttribute="bottom" constant="21" id="nRK-XM-5gm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hnK-jj-xyl" secondAttribute="bottom" id="oRY-6X-Qmb"/>
@@ -88,7 +110,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="CeZ-HC-HD1"/>
                     <connections>
+                        <outlet property="InfoLabel" destination="Ktg-Yn-SAc" id="Dta-pL-tQr"/>
                         <outlet property="collectionView" destination="hnK-jj-xyl" id="BGT-b5-oDa"/>
+                        <outlet property="counterLabel" destination="4hA-UY-6bs" id="w55-Q8-hLn"/>
                         <outlet property="memoryGuessImageView" destination="woU-hV-IHI" id="BSV-dE-uxv"/>
                     </connections>
                 </viewController>
