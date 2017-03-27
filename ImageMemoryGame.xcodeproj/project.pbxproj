@@ -18,6 +18,9 @@
 		B946B37E1E87E1DB009F9520 /* FlickrAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B37D1E87E1DB009F9520 /* FlickrAPIClient.swift */; };
 		B946B3801E87E1F9009F9520 /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B37F1E87E1F9009F9520 /* MemoryGameViewModel.swift */; };
 		B946B3871E87E232009F9520 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3861E87E232009F9520 /* Constants.swift */; };
+		B946B38A1E87F7A1009F9520 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B3891E87F7A1009F9520 /* Image.swift */; };
+		B946B38D1E8803C8009F9520 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B38C1E8803C8009F9520 /* JSONDecodable.swift */; };
+		B9EA1E151E88D897000DEE92 /* MemoryGameDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		B946B37D1E87E1DB009F9520 /* FlickrAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrAPIClient.swift; path = Networking/FlickrAPIClient.swift; sourceTree = "<group>"; };
 		B946B37F1E87E1F9009F9520 /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryGameViewModel.swift; path = ViewModel/MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		B946B3861E87E232009F9520 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
+		B946B3891E87F7A1009F9520 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
+		B946B38C1E8803C8009F9520 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONDecodable.swift; path = Protocol/JSONDecodable.swift; sourceTree = "<group>"; };
+		B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryGameDataProvider.swift; path = Protocol/MemoryGameDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		B946B34A1E879254009F9520 /* ImageMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				B946B38B1E880392009F9520 /* Protocol */,
+				B946B3881E87F785009F9520 /* Model */,
 				B946B34B1E879254009F9520 /* AppDelegate.swift */,
 				B946B34F1E879254009F9520 /* Main.storyboard */,
 				B946B3821E87E205009F9520 /* View */,
@@ -175,6 +183,23 @@
 				B946B3861E87E232009F9520 /* Constants.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		B946B3881E87F785009F9520 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B946B3891E87F7A1009F9520 /* Image.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B946B38B1E880392009F9520 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B946B38C1E8803C8009F9520 /* JSONDecodable.swift */,
+				B9EA1E141E88D897000DEE92 /* MemoryGameDataProvider.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B946B38A1E87F7A1009F9520 /* Image.swift in Sources */,
+				B9EA1E151E88D897000DEE92 /* MemoryGameDataProvider.swift in Sources */,
 				B946B37E1E87E1DB009F9520 /* FlickrAPIClient.swift in Sources */,
 				B946B34C1E879254009F9520 /* AppDelegate.swift in Sources */,
+				B946B38D1E8803C8009F9520 /* JSONDecodable.swift in Sources */,
 				B946B3801E87E1F9009F9520 /* MemoryGameViewModel.swift in Sources */,
 				B946B37A1E87E175009F9520 /* MemoryGameViewController.swift in Sources */,
 				B946B37C1E87E1AF009F9520 /* ImageCell.swift in Sources */,
@@ -561,6 +589,7 @@
 				B946B3721E879254009F9520 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B946B3731E879254009F9520 /* Build configuration list for PBXNativeTarget "ImageMemoryGameTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +598,7 @@
 				B946B3751E879254009F9520 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B946B3761E879254009F9520 /* Build configuration list for PBXNativeTarget "ImageMemoryGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +607,7 @@
 				B946B3781E879254009F9520 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
