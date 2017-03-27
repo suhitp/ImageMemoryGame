@@ -35,8 +35,9 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         //init viewmodel and set delegate
         viewModel = MemoryGameViewModel()
         viewModel.delegate = self
-        view.startLoadingIndicator()
-        viewModel.loadImages()
+        
+        //start the game
+        startGame()
     }
 
     //MARK: Configure CollectionViewCell
@@ -49,6 +50,21 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
         layout.itemSize = CGSize(width: height, height: height)
     }
     
+    //MARK:
+    
+    fileprivate func startGame() {
+        self.images.removeAll()
+        self.isGameStarted = false
+        self.collectionView.reloadData()
+        self.memoryGuessImageView.image = nil
+        self.memoryGuessImageView.isHidden = true
+        self.counterLabel.text = ""
+        self.InfoLabel.isHidden = true
+        self.counterLabel.isHidden = false
+        self.view.startLoadingIndicator()
+        self.viewModel.loadImages()
+    }
+    
     //MARK: MemorygameDataProvider
     
     func didReceiveData(with images: [Image]) {
@@ -57,7 +73,8 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
             return
         }
         
-        self.images = images
+        let subArray = images[0...8]
+        self.images = Array(subArray)
         
         DispatchQueue.main.async {
             self.counterLabel.isHidden = false
@@ -76,12 +93,13 @@ class MemoryGameViewController: UIViewController, MemorygameDataProvider {
        present(alertController, animated: true, completion: nil)
     }
     
-    //MARK: Timer
+    //MARK: updateCounter
     func updateCounter() {
         counter += 1
         counterLabel.text = "\(counter)"
         if counter == 15 {
             let randomNumber = arc4random_uniform(9)
+            print(randomNumber)
             let image = images[Int(randomNumber)]
             memoryGuessImageView.isHidden = false
             memoryGuessImageView.kf.setImage(with: image.imageUrl)
@@ -108,24 +126,19 @@ extension MemoryGameViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellReuseIdentifier, for: indexPath) as! ImageCell
-        configureCell(cell)
         
-        if !isGameStarted {
-            let image = images[indexPath.row]
-            cell.posterImageView.kf.setImage(with: image.imageUrl, placeholder: nil, options: [.transition(ImageTransition.fade(0.5))], progressBlock: nil, completionHandler: nil)
-        }
-       
-        return cell
-    }
-    
-    private func configureCell(_ cell: ImageCell) {
-        if isGameStarted {
+        if (isGameStarted) {
+            cell.background.backgroundColor = UIColor.gray
             cell.posterImageView.isHidden = true
-            cell.background.isHidden = false
         } else {
+            cell.background.backgroundColor = UIColor.white
             cell.posterImageView.isHidden = false
-            cell.background.isHidden = true
         }
+        
+        let image = images[indexPath.row]
+        cell.posterImageView.kf.setImage(with: image.imageUrl, placeholder: nil, options: [.transition(ImageTransition.fade(0.5))], progressBlock: nil, completionHandler: nil)
+
+        return cell
     }
     
 }
@@ -133,22 +146,21 @@ extension MemoryGameViewController: UICollectionViewDataSource {
 extension MemoryGameViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("item selected: \(indexPath.row)")
-        
+
         guard isGameStarted == true  else {
             return
         }
         
         let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
+        cell.background.backgroundColor = UIColor.white
         
-        cell.posterImageView.isHidden = false
-        UIView.transition(from: cell.background, to: cell.posterImageView, duration: 0.5, options: .transitionFlipFromRight, completion: nil)
+        UIView.transition(with: cell.contentView, duration: 0.5, options: .transitionFlipFromRight, animations: {
+            cell.posterImageView.isHidden = false
+        }, completion: nil)
         
         if cell.posterImageView.image == memoryGuessImageView.image {
-            isGameStarted = false
             displaySuccessAlert()
         }
-        
     }
 }
 
@@ -159,14 +171,14 @@ extension MemoryGameViewController {
         
         let alertController = UIAlertController(title: "Congrats", message: "👏🏻 Your guess is correct 😀", preferredStyle: .alert)
         let retryAction = UIAlertAction(title: "Play again", style: .default) { (_) in
-            self.images = []
-            self.collectionView.reloadData()
-            self.viewModel.loadImages()
-            self.memoryGuessImageView.image = nil
-            self.counterLabel.isHidden = false
+            self.startGame()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.isGameStarted = false
+            self.collectionView.reloadData()
+        }
+        
         alertController.addAction(retryAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)

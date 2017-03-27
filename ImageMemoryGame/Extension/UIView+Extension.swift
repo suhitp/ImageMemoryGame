@@ -15,9 +15,9 @@ extension UIView {
         stopLoadingIndicator()
         
         let loaderView = UIView()
-        loaderView.frame = CGRect(x: 0, y: 0, width: 79, height: 79)
+        loaderView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         loaderView.tag = 8888
-        loaderView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        loaderView.backgroundColor = UIColor(white: 0, alpha: 0.6)
         loaderView.layer.cornerRadius = 5
         
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
